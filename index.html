@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
+    <title>Singletons in JavaScript</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h2 id="title"></h2>
+    <h1>Singletons in JavaScript</h1>
+    <ul class="summary">
+        <li>used when you only want a single instance of a class</li>
+        <li>there are many ways to do it, this is my example</li>
+        <li>example use case if a Settings/Environmental Vars accessor</li>
+    </ul>
 
-    <script type="text/javascript">
+    <script src="./Settings.js"></script>
+    <script>
+        const s = new Settings();
+        const a = new Settings();
+
+        console.log(s);
+        console.log(a);
+        console.log(s === a);
     </script>
 </body>
-</html>
