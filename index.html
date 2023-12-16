@@ -6,9 +6,58 @@
     <title>Document</title>
 </head>
 <body>
-    <h2 id="title"></h2>
+    <h2 id="title">Classes: Extends/Inheritance</h2>
 
     <script type="text/javascript">
+        // Parent and Child Class
+        class Person {
+            constructor (_name, _age) {
+                this.name = _name;
+                this.age = _age;
+            }
+
+            describe() {
+                console.log(`I am ${this.name} and I am ${this.age} years old`);
+            }
+        }
+
+        class Programmer extends Person {
+            constructor(_name, _age, _yearsOfExperience) {
+                super(_name, _age); // Person constructor();
+
+                // Custom behavior
+                this.yearsOfExperience = _yearsOfExperience;
+            }
+
+            code () {
+                console.log(`${this.name} is coding`);
+            }
+        }
+
+        // let person1 = new Person("Jeff", 45);
+        // let programmer1 = new Programmer("Dom", 56, 20);
+
+        // console.log(person1);
+        // console.log(programmer1); // prototype: Person
+
+        // person1.code(); // Uncaught TypeError: person1.code is not a function
+        // programmer1.code();
+        // programmer1.describe();
+
+        const programmers = [
+            new Programmer("chSong", 32, 5),
+            new Programmer("srKim", 30, 5),
+            new Programmer("khSung", 41, 17)
+        ];
+
+        function developSoftware(programmers) {
+            // Develop software
+            for (const programmer of programmers) { // for-of
+                programmer.code();
+            }
+        }
+
+        developSoftware(programmers);
     </script>
 </body>
 </html>
